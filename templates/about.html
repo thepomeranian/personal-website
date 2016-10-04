@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block bodyclass %}mybodyclass{% endblock %} {% block content %}
+<div class="container transbox ontop">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="selfies animated slideInLeft" id="first">
+                <div><img src="static/assets/images/photo1.JPG" class="img-responsive img-thumbnail" alt="Photo of Frances"></div>
+                <div><img src="static/assets/images/photo2.JPG" class="img-responsive img-thumbnail" alt="Photo of Frances"></div>
+                <div><img src="static/assets/images/photo3.JPG" class="img-responsive img-thumbnail" alt="Photo of Frances"></div>
+                <div><img src="static/assets/images/photo4.JPG" class="img-responsive img-thumbnail" alt="Photo of Frances"></div>
+                <div><img src="static/assets/images/photo5.JPG" class="img-responsive img-thumbnail" alt="Photo of Frances"></div>
+                <div><img src="static/assets/images/photo6.JPG" class="img-responsive img-thumbnail" alt="Photo of Frances"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card animated slideInRight" id="second">
+                <div class="card-block">
+                    <h4 class="card-title">Resume</h4>
+                    <h6 class="card-subtitle text-muted">Last Updated 10/3/16</h6>
+                </div>
+                <img class="img-responsive img-thumbnail" src="static/assets/images/Frances_Liu_Software_Engineer_Resume-page-001.jpg" alt="Card image">
+                <div class="card-block">
+                    <p class="card-text">Currently seeking entry-level software engineering positions focusing on front-end web dev.</p>
+                    <a href="assets/Frances_Liu_Software_Engineer_Resume.pdf" class="card-link">Resume PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Coding Activity</h3>
+            <hr>
+        </div>
+        <div class="col-md-6 animated slideInLeft">
+            <figure>
+                <embed src="https://wakatime.com/share/@7f49afd6-98fc-4bab-a4ff-1067c809f0aa/3132b423-8683-4a51-a22c-e8dceaf1ed52.svg"></embed>
+            </figure>
+        </div>
+        <div class="col-md-6 animated slideInRight">
+            <figure>
+                <embed src="https://wakatime.com/share/@7f49afd6-98fc-4bab-a4ff-1067c809f0aa/9831f015-d17a-490c-ba88-d446f4cd0636.svg"></embed>
+            </figure>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+body { 
+  background: url(assets/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+.centering {
+    line-height: 50px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+.transbox {
+    margin: 30px 30px 30px 30px;
+    background:rgb(0,0,0);
+    background:rgba(0,0,0,.6);
+
+}
+
+.ontop {
+  position: relative;
+  color: white;
+  font-weight: 300;
+}
+
+.ontop a{
+	color: white;
+/*	text-decoration: none;*/
+}
+
+[data-hint]:after {
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+	text-transform: lowercase;
+}

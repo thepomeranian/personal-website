@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Frances Liu</title>
+    <meta name="description" content="Frances Liu's Website">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="http://image.flaticon.com/icons/png/128/74/74907.png">
+    <!-- jQuery  -->
+    <script type="text/javascript" src="static/js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- tether -->
+    <script type="text/javascript" src="static/js/tether.min.js"></script>
+    <!-- Bootstrap css and js -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <script src="static/js/bootstrap.min.js"></script>
+    <!-- Slick -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
+    <!-- mdb -->
+    <script type="text/javascript" src="static/js/mdb.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/mdb.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- css and js files  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/animate.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <script src="static/js/main.js"></script>
+</head>
+<header>
+</header>
+
+<body class="{% block bodyclass %}{% endblock %}">
+    <!--Navbar-->
+    <nav class="navbar navbar-dark navbar-static-top scrolling-navbar">
+        <!-- Collapse button-->
+        <button id="nav-icon4" class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="container">
+            <!--Collapse content-->
+            <div class="collapse navbar-toggleable-xs" id="collapseEx">
+                <!--Navbar Brand-->
+                <a class="navbar-brand" href="/">Home</a>
+                <!--Links-->
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">Blog</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-xs-right">
+                    <li class="social"><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+                    <li class="social"><a href="https://github.com/thepomeranian"><i class="fa fa-lg fa-github"></i></a></li>
+                    <li class="social"><a href="https://www.linkedin.com/in/frances-liu"><i class="fa fa-lg fa-linkedin"></i></a></li>
+                    <li class="social"><a href="mailto:frances.liu168@gmail.com"><i class="fa fa-lg fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <!--/.Collapse content-->
+        </div>
+    </nav>
+    <!--/.Navbar-->
+    {% block content %} {% endblock %}
+</body>
+<script>
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-84138923-1', 'auto');
+ga('send', 'pageview');
+
+$('.selfies').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    nextArrow: '',
+    prevArrow: '',
+});
+
+$('.first').fadeIn(500).delay(3000);
+$('.second').fadeIn(500).delay(4000);
+$('.third').fadeIn(500).delay(5000);
+$('.fourth').fadeIn(500).delay(6000);
+</script>
+
+</html>
