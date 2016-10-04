@@ -1,0 +1,14 @@
+{% if peewee.pagination.get_page_count() > 1 %}
+<ul class="pager">
+  {% if peewee.pagination.get_page() > 1 %}
+    <li class="previous"><a href="./?{{ request.args|clean_querystring('page', page=peewee.pagination.get_page() - 1) }}">&laquo; Previous {{ peewee.pagination.get_page() - 1 }} / {{ peewee.pagination.get_page_count() }}</a></li>
+  {% else %}
+    <li class="previous disabled"><a href="#">&laquo; Previous</a></li>
+  {% endif %}
+  {% if peewee.pagination.get_page_count() > peewee.pagination.get_page() %}
+    <li class="next"><a href="./?{{ request.args|clean_querystring('page', page=peewee.pagination.get_page() + 1) }}">Next {{ peewee.pagination.get_page() + 1 }} / {{ peewee.pagination.get_page_count() }} &raquo;</a></li>
+  {% else %}
+    <li class="next disabled"><a href="#">Next &raquo;</a></li>
+  {% endif %}
+</ul>
+{% endif %}
