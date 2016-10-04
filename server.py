@@ -20,6 +20,7 @@ from jinja2 import StrictUndefined
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
 DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
 SITE_WIDTH = 800
+SECRET_KEY=secret.SECRET_KEY
 
 app = Flask(__name__, static_url_path="/static", static_folder="static")
 app.config.from_object(__name__)
@@ -132,7 +133,7 @@ def login():
         password = request.form.get('password')
         # TODO: If using a one-way hash, you would also hash the user-submitted
         # password and do the comparison on the hashed versions.
-        if password == app.config['ADMIN_PASSWORD']:
+        if password == secret.ADMIN_PASSWORD:
             session['logged_in'] = True
             session.permanent = True  # Use cookie to store session.
             flash('You are now logged in.', 'success')
@@ -167,23 +168,21 @@ def projects():
 
 @app.route('/blog/')
 def blog():
-  print "blog"
-  return render_template("blog.html")
-    # search_query = request.args.get('q')
-    # if search_query:
-    #     query = Entry.search(search_query)
-    # else:
-    #     query = Entry.public().order_by(Entry.timestamp.desc())
+    search_query = request.args.get('q')
+    if search_query:
+        query = Entry.search(search_query)
+    else:
+        query = Entry.public().order_by(Entry.timestamp.desc())
 
-    # # The `object_list` helper will take a base query and then handle
-    # # paginating the results if there are more than 20. For more info see
-    # # the docs:
-    # # http://docs.peewee-orm.com/en/latest/peewee/playhouse.html#object_list
-    # return object_list(
-    #     'blog.html',
-    #     query,
-    #     search=search_query,
-    #     check_bounds=False)
+    # The `object_list` helper will take a base query and then handle
+    # paginating the results if there are more than 20. For more info see
+    # the docs:
+    # http://docs.peewee-orm.com/en/latest/peewee/playhouse.html#object_list
+    return object_list(
+        'blog.html',
+        query,
+        search=search_query,
+        check_bounds=False)
 
 
 @app.route('/blog/create', methods=['GET', 'POST'])
@@ -265,6 +264,7 @@ def not_found(exc):
 def main():
     database.create_tables([Entry, FTSEntry], safe=True)
     app.run(debug=True)
+
 
 if __name__ == '__main__':
     main()
