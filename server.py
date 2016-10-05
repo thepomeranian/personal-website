@@ -20,7 +20,7 @@ from jinja2 import StrictUndefined
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
 DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'blog.db')
 SITE_WIDTH = 800
-SECRET_KEY=secret.SECRET_KEY
+SECRET_KEY = secret.SECRET_KEY
 
 app = Flask(__name__, static_url_path="/static", static_folder="static")
 app.config.from_object(__name__)
@@ -166,6 +166,16 @@ def projects():
     return render_template('projects.html')
 
 
+@app.route('/myanmar')
+def myanmar():
+    return render_template('myanmar/index.html')
+
+
+@app.route('/case4')
+def case4():
+    return render_template('case4/index.html')
+
+
 @app.route('/blog/')
 def blog():
     search_query = request.args.get('q')
@@ -260,6 +270,7 @@ def clean_querystring(request_args, *keys_to_remove, **new_values):
 @app.errorhandler(404)
 def not_found(exc):
     return Response('<h3>Not found</h3>'), 404
+
 
 def main():
     database.create_tables([Entry, FTSEntry], safe=True)
