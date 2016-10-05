@@ -166,16 +166,6 @@ def projects():
     return render_template('projects.html')
 
 
-@app.route('/myanmar')
-def myanmar():
-    return render_template('myanmar/index.html')
-
-
-@app.route('/case4')
-def case4():
-    return render_template('case4/index.html')
-
-
 @app.route('/blog/')
 def blog():
     search_query = request.args.get('q')
